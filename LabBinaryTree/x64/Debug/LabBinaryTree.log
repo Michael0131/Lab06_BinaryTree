@@ -1,1 +1,29 @@
-﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(473,5): error MSB8020: The build tools for Visual Studio 2019 (Platform Toolset = 'v142') cannot be found. To build using the v142 build tools, please install Visual Studio 2019 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  testBNode.cpp
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(87,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(88,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(89,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(107,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(108,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(109,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(129,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(130,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\testBNode.h(131,20): warning C4312: 'type cast': conversion from 'unsigned int' to 'BNode<int> *' of greater size
+  (compiling source file 'testBNode.cpp')
+  
+  LabBinaryTree.vcxproj -> C:\Users\mathk\OneDrive\Documents\To Laptop - Doc\BYU-I\Winter 2026 Semester\Designing Data Structures\Lab06_BinaryTree\x64\Debug\LabBinaryTree.exe

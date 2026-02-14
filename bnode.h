@@ -33,7 +33,6 @@ template <class T>
 class BNode
 {
 public:
-    // ---------- Michael Code To Complete ----------
     // Construct
     BNode() : pLeft(nullptr), pRight(nullptr), pParent(nullptr), data() {}
     BNode(const T& t) : pLeft(nullptr), pRight(nullptr), pParent(nullptr), data(t) {}
@@ -68,8 +67,14 @@ inline size_t size(const BNode<T>* p)
 template <class T>
 inline void addLeft(BNode<T>* pNode, BNode<T>* pAdd)
 {
-    // ---------- Brayden Code To Complete ----------
-    
+    assert(pNode != nullptr);
+    assert(pAdd != nullptr);
+    assert(pNode->pLeft == nullptr);   // prevent accidental overwrite/leak
+ 
+    // Link child upward to its parent
+    pAdd->pParent = pNode;
+    // Link parent downward to its (left) child
+    pNode->pLeft = pAdd;
 }
 
 /******************************************************
@@ -78,8 +83,14 @@ inline void addLeft(BNode<T>* pNode, BNode<T>* pAdd)
 template <class T>
 inline void addRight(BNode<T>* pNode, BNode<T>* pAdd)
 {
-    // ---------- Brayden Code To Complete ----------
+    assert(pNode != nullptr);
+    assert(pAdd != nullptr);
+    assert(pNode->pRight == nullptr);
     
+    // Link child upward to its parent
+    pAdd->pParent = pNode;
+    // Link parent downward to its (right) child
+    pNode->pRight = pAdd;
 }
 
 /******************************************************
@@ -88,51 +99,44 @@ inline void addRight(BNode<T>* pNode, BNode<T>* pAdd)
 template <class T>
 inline void addLeft(BNode<T>* pNode, const T& t)
 {
-    // ---------- Brayden Code To Complete ----------
-    
+    // Make a new pointer for the new node
+    BNode<T>* pAdd = new BNode<T>(t);
+    addLeft(pNode, pAdd);
 }
 
 template <class T>
 inline void addLeft(BNode<T>* pNode, T&& t)
 {
-    // ---------- Brayden Code To Complete ----------
-    
+    // Make a new pointer for the new node (with move constructor)
+    BNode<T>* pAdd = new BNode<T>(std::move(t));
+    addLeft(pNode, pAdd);
 }
 
 /******************************************************
  * ADD RIGHT (value)
  ******************************************************/
 template <class T>
-void addRight(BNode<T>* pNode, const T& t)
+inline void addRight(BNode<T>* pNode, const T& t)
 {
     // Make a new pointer for the new node
-    BNode<T> * pAdd = new BNode<T>(t);
-    // Attach the parent to the child
-    pAdd->pParent = pNode;
-    // Attach the child to the parent
-    pNode->pRight = pAdd;
-    
+    BNode<T>* pAdd = new BNode<T>(t);
+    addRight(pNode, pAdd);
 }
 
 template <class T>
-void addRight(BNode<T>* pNode, T&& t)
+inline void addRight(BNode<T>* pNode, T&& t)
 {
-    //  Make a new pointer for the new node
-    BNode<T>* pAdd = new BNode<T>(t);
-    // Attach the parent to the child
-    pAdd->pParent = pNode;
-    // Attach the child to the parent
-    pNode->pRight = pAdd;
-    
+    // Make a new pointer for the new node (with move constructor)
+    BNode<T>* pAdd = new BNode<T>(std::move(t));
+    addRight(pNode, pAdd);
 }
 
 /*****************************************************
  * CLEAR (post-order LRV)
  ****************************************************/
 template <class T>
-void clear(BNode<T>*& pThis)
+inline void clear(BNode<T>*& pThis)
 {
-    // ---------- Michael Code To Complete ----------
     if (pThis == nullptr)
         return;
 
@@ -141,7 +145,6 @@ void clear(BNode<T>*& pThis)
 
     delete pThis;
     pThis = nullptr;
-    
 }
 
 /***********************************************
@@ -150,18 +153,15 @@ void clear(BNode<T>*& pThis)
 template <class T>
 inline void swap(BNode<T>*& pLHS, BNode<T>*& pRHS)
 {
-    // ---------- Michael Code To Complete ----------
     std::swap(pLHS, pRHS);
-    
 }
 
 /**********************************************
  * COPY (deep copy, fix parent pointers)
  *********************************************/
 template <class T>
-BNode<T>* copy(const BNode<T>* pSrc)
+inline BNode<T>* copy(const BNode<T>* pSrc)
 {
-    // ---------- Michael Code To Complete ----------
     if (pSrc == nullptr)
         return nullptr;
 
@@ -180,9 +180,8 @@ BNode<T>* copy(const BNode<T>* pSrc)
 }
 
 template <class T>
-void assign(BNode<T>*& pDest, const BNode<T>* pSrc, BNode<T>* pParent = nullptr)
+inline void assign(BNode<T>*& pDest, const BNode<T>* pSrc, BNode<T>* pParent = nullptr)
 {
-    // ---------- Michael Code To Complete ----------
     if (pSrc == nullptr)
     {
         clear(pDest);
