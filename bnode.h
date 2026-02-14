@@ -52,8 +52,14 @@ public:
 template <class T>
 inline size_t size(const BNode<T>* p)
 {
-    // ---------- James Code To Complete ----------
-    return 99;
+    // Recursively travel through every node
+
+    // Stop when the current node doesn't exist
+    if (!p)
+      return 0;
+    // Add 1 plus whatever is on the left and right sides
+    else
+       return (size(p->pLeft) + 1 + size(p->pRight));
 }
 
 /******************************************************
@@ -99,16 +105,24 @@ inline void addLeft(BNode<T>* pNode, T&& t)
 template <class T>
 void addRight(BNode<T>* pNode, const T& t)
 {
-    // ---------- James Code To Complete ----------
-    
+    // Make a new pointer for the new node
+    BNode<T> * pAdd = new BNode<T>(t);
+    // Attach the parent to the child
+    pAdd->pParent = pNode;
+    // Attach the child to the parent
+    pNode->pRight = pAdd;
     
 }
 
 template <class T>
 void addRight(BNode<T>* pNode, T&& t)
 {
-    // ---------- James Code To Complete ----------
-    
+    //  Make a new pointer for the new node
+    BNode<T>* pAdd = new BNode<T>(t);
+    // Attach the parent to the child
+    pAdd->pParent = pNode;
+    // Attach the child to the parent
+    pNode->pRight = pAdd;
     
 }
 
